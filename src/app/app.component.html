@@ -1,0 +1,93 @@
+<form #basicService="ngForm">
+    <br>
+    <br>
+  <div class="container" style="text-align:center; background-color:red">
+    <br>
+    <br>  
+    <h3>{{title}}</h3>
+    <div *ngIf="isTrue == 1" class="form-group">
+    <div class="row justify-content-md-center">
+    <div class="form-group">
+          <div class="row">
+              <div class="col-md-auto">
+                  <label>Type your first name:</label>
+              </div>
+              <div class="col-md-auto">
+                  <input type="text" name="firstName" class="form-control" [(ngModel)]="firstName">
+              </div>
+          </div>
+    </div>
+    <div class="form-group">
+          <div class="row">
+              <div class="col-md-auto">
+                <label>Type your last name:</label>
+              </div>
+              <div class="col-md-auto">
+                <input type="text" name="lastName" class="form-control" [(ngModel)]="lastName">
+              </div>
+          </div>
+    </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row justify-content-md-center">
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-success" (click)="proceed()">Proceed</button>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+    <div *ngIf="isTrue == 2" class="form-group">
+            <!-- <div class="row justify-content-md-center">-->
+            <div class="form-group">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                            <label>Type your Birth Date:</label>
+                        </div>
+                        <div class="col-md-auto">
+                            <input type="text" name="birthday" class="form-control" [(ngModel)]="birthday">
+                        </div>
+                    </div>
+            </div>
+
+            <div class="form-group">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                          <label>Type your city:</label>
+                        </div>
+                        <div class="col-md-auto">
+                          <input type="text" name="city" class="form-control" [(ngModel)]="city">
+                        </div>
+                    </div>
+            </div>
+            <div class="form-group">
+                    <div class="row justify-content-md-center">
+                        <div class="col-sm-6">
+                          <button type="button" class="btn btn-success" (click)="proceed2()">Proceed</button>
+                        </div>
+                    </div>
+            </div> 
+    </div>
+
+    <div *ngIf="isSucess" style="text-align:center">
+        <h3>Hello {{firstName}} {{lastName}}!<br></h3>
+           <div *ngIf="!flag"><h5> You are from {{city}}.<br></h5></div>
+           <div *ngIf="flag"><h5> We don't know were you are from...<br></h5></div>
+           <div *ngIf="!flag1"><h5>You are {{age}}</h5></div>
+           <div *ngIf="flag1"><h5> We couldn't understand your birthday...<br></h5></div>
+        
+        <div class="form-group">
+                <div class="row justify-content-md-center">
+                    <div class="col-sm-6">
+                      <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
+                    </div>
+                </div>
+            </div> 
+    </div>
+
+<br>
+<br>
+</div>
+</form>

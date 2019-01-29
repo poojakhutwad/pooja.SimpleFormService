@@ -1,0 +1,11 @@
+<div>
+  <h1>{{title}}</h1>
+  <h2>***Silver Rate***</h2>
+  <li *ngFor="let item of items | async">
+    <pre>{{ item | json }}</pre>
+  </li>
+  <h2>***Gold Rate***</h2>
+  <li *ngFor = "let item of goldItems | async">
+    <pre>{{item | json}} </pre>
+  </li>
+  </div>
